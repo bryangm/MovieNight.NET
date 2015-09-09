@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieNight.WebAPI", "MovieNight.WebAPI\MovieNight.WebAPI.csproj", "{0A1C0E96-860B-47C7-B399-550D7291DF8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieNight.Tests", "MovieNight.Tests\MovieNight.Tests.csproj", "{661DD7E4-BDA0-481F-B5B7-AA399CB55FCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A1C0E96-860B-47C7-B399-550D7291DF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A1C0E96-860B-47C7-B399-550D7291DF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A1C0E96-860B-47C7-B399-550D7291DF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A1C0E96-860B-47C7-B399-550D7291DF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{661DD7E4-BDA0-481F-B5B7-AA399CB55FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661DD7E4-BDA0-481F-B5B7-AA399CB55FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661DD7E4-BDA0-481F-B5B7-AA399CB55FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661DD7E4-BDA0-481F-B5B7-AA399CB55FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
