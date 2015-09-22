@@ -7,9 +7,10 @@ namespace MovieNight.Domain.Interfaces
 {
     public interface INightsRepository
     {
-        Task<List<Night>>  GetNights();
+        Task<List<Night>> GetNights();
         Task<Night> GetNightById(string id);
-        Task SaveNight(Night night);
-        Task DeleteNight(string id);
+        Task<Night> InsertNight(Night night);
+        Task<Night> UpdateNight(Night night);
+        Task<Night> DeleteNight(string id);
     }
 }

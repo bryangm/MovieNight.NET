@@ -8,8 +8,16 @@ namespace MovieNight.Domain.Interfaces
     public interface IMoviesRepository
     {
         Task<List<Movie>> GetMovies();
-        Task<Movie> GetMovieById(string id);
-        Task SaveMovie(Movie movie);
-        Task DeleteMovie(string id);
+        Task<Movie> GetMovieById(string movieId);
+        Task<Movie> InsertMovie(Movie movie);
+        Task<Movie> UpdateMovie(Movie movie);
+        Task<Movie> DeleteMovie(string movieId);
+        Task<Movie> InsertDirector(string movieId, Person person);
+        Task<Movie> DeleteDirector(string movieId, string personId);
+        Task<Movie> InsertWriter(string movieId, Person person);
+        Task<Movie> DeleteWriter(string movieId, string personId);
+        Task<Movie> InsertCastMember(string movieId, Person person);
+        Task<Movie> DeleteCastMember(string movieId, string personId);
+
     }
 }

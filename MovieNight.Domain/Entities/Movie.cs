@@ -15,8 +15,11 @@ namespace MovieNight.Domain.Entities
         public int Length { get; set; }
         public List<string> Genre { get; set; }
         public DateTime ReleaseDate { get; set; }
+        [BsonIgnoreIfNull]
         public List<Person> Directors { get; set; }
+        [BsonIgnoreIfNull]
         public List<Person> Writers { get; set; }
+        [BsonIgnoreIfNull]
         public List<Person> Cast { get; set; } 
     }
 }

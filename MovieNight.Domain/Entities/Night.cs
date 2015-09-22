@@ -10,6 +10,7 @@ namespace MovieNight.Domain.Entities
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         public DateTime ViewBy { get; set; }
+        [BsonIgnoreIfNull]
         public List<Submission> Submissions { get; set; }
     }
 }
