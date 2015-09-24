@@ -10,7 +10,7 @@ namespace MovieNight.Domain.Interfaces
         Task<List<Movie>> GetMovies();
         Task<Movie> GetMovieById(string movieId);
         Task<Movie> InsertMovie(Movie movie);
-        Task<Movie> UpdateMovie(Movie movie);
+        Task<Movie> UpdateMovie(string movieId, Movie movie);
         Task<Movie> DeleteMovie(string movieId);
         Task<Movie> InsertDirector(string movieId, Person person);
         Task<Movie> DeleteDirector(string movieId, string personId);

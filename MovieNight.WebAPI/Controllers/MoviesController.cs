@@ -90,13 +90,13 @@ namespace MovieNight.WebAPI.Controllers
 
         [Route("{movieId}")]
         [HttpPatch]
-        public async Task<HttpResponseMessage> UpdateMovie(Movie movie)
+        public async Task<HttpResponseMessage> UpdateMovie(string movieId, Movie movie)
         {
             HttpResponseMessage response;
 
             try
             {
-                var results = await _repository.UpdateMovie(movie);
+                var results = await _repository.UpdateMovie(movieId, movie);
 
                 response = results == null
                     ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie not found")
@@ -135,7 +135,7 @@ namespace MovieNight.WebAPI.Controllers
 
         #region Routes: movies/{movieId}/directors
         [Route("{movieId}/directors")]
-        [HttpPatch]
+        [HttpPost]
         public async Task<HttpResponseMessage> InsertDirector(string movieId, Person person)
         {
             HttpResponseMessage response;
@@ -183,7 +183,7 @@ namespace MovieNight.WebAPI.Controllers
 
         #region Routes: movies/{movieId}/writers
         [Route("{movieId}/writers")]
-        [HttpPatch]
+        [HttpPost]
         public async Task<HttpResponseMessage> InsertWriter(string movieId, Person person)
         {
             HttpResponseMessage response;
@@ -231,7 +231,7 @@ namespace MovieNight.WebAPI.Controllers
 
         #region Routes: movies/{movieId}/cast
         [Route("{movieId}/cast")]
-        [HttpPatch]
+        [HttpPost]
         public async Task<HttpResponseMessage> InsertCastMember(string movieId, Person person)
         {
             HttpResponseMessage response;

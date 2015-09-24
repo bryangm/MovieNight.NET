@@ -37,10 +37,10 @@ namespace MovieNight.Domain.Repositories.MongoDb
             return movie;
         }
 
-        public async Task<Movie> UpdateMovie(Movie movie)
+        public async Task<Movie> UpdateMovie(string movieId, Movie movie)
         {
             var filterBuilder = Builders<Movie>.Filter;
-            var filter = filterBuilder.Eq(m => m.Id, movie.Id);
+            var filter = filterBuilder.Eq(m => m.Id, movieId);
 
             var updateBuilder = Builders<Movie>.Update;
             var update = updateBuilder.Set(m => m.Title, movie.Title)
