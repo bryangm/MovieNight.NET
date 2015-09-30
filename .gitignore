@@ -179,4 +179,4 @@ UpgradeLog*.htm
 *.bim.layout
 *.bim_*.settings
 
-
+MovieNight.WebAPI/Web.Debug.config
