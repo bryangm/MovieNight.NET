@@ -28,7 +28,7 @@ namespace MovieNight.WebAPI.Controllers
         public async Task<HttpResponseMessage> GetMovies()
         {
             HttpResponseMessage response;
-            var results = await _repository.GetMovies();
+            var results = await _repository.FindAllMovies();
 
             try
             {
@@ -46,7 +46,7 @@ namespace MovieNight.WebAPI.Controllers
 
         [Route("")]
         [HttpPost]
-        public async Task<HttpResponseMessage> InsertMovie(Movie movie)
+        public async Task<HttpResponseMessage> PostMovie(Movie movie)
         {
             HttpResponseMessage response;
 
@@ -74,7 +74,7 @@ namespace MovieNight.WebAPI.Controllers
 
             try
             {
-                var results = await _repository.GetMovieById(movieId);
+                var results = await _repository.FindMovieById(movieId);
 
                 response = results == null
                     ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie not found")
@@ -90,7 +90,7 @@ namespace MovieNight.WebAPI.Controllers
 
         [Route("{movieId}")]
         [HttpPatch]
-        public async Task<HttpResponseMessage> UpdateMovie(string movieId, Movie movie)
+        public async Task<HttpResponseMessage> PatchMovie(string movieId, Movie movie)
         {
             HttpResponseMessage response;
 
@@ -136,7 +136,7 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/directors
         [Route("{movieId}/directors")]
         [HttpPost]
-        public async Task<HttpResponseMessage> InsertDirector(string movieId, Person person)
+        public async Task<HttpResponseMessage> PostDirector(string movieId, Person person)
         {
             HttpResponseMessage response;
 
@@ -184,7 +184,7 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/writers
         [Route("{movieId}/writers")]
         [HttpPost]
-        public async Task<HttpResponseMessage> InsertWriter(string movieId, Person person)
+        public async Task<HttpResponseMessage> PostWriter(string movieId, Person person)
         {
             HttpResponseMessage response;
 
@@ -232,7 +232,7 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/cast
         [Route("{movieId}/cast")]
         [HttpPost]
-        public async Task<HttpResponseMessage> InsertCastMember(string movieId, Person person)
+        public async Task<HttpResponseMessage> PostCastMember(string movieId, Person person)
         {
             HttpResponseMessage response;
 

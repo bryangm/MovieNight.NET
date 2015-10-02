@@ -7,8 +7,8 @@ namespace MovieNight.Domain.Interfaces
 {
     public interface IMoviesRepository
     {
-        Task<List<Movie>> GetMovies();
-        Task<Movie> GetMovieById(string movieId);
+        Task<List<Movie>> FindAllMovies();
+        Task<Movie> FindMovieById(string movieId);
         Task<Movie> InsertMovie(Movie movie);
         Task<Movie> UpdateMovie(string movieId, Movie movie);
         Task<Movie> DeleteMovie(string movieId);

@@ -18,12 +18,12 @@ namespace MovieNight.Domain.Repositories.MongoDb
             _context = context;
         }
 
-        public async Task<List<Movie>> GetMovies()
+        public async Task<List<Movie>> FindAllMovies()
         {
             return await _context.Movies.Find(new BsonDocument()).ToListAsync();
         }
 
-        public async Task<Movie> GetMovieById(string movieId)
+        public async Task<Movie> FindMovieById(string movieId)
         {
             var filterBuilder = Builders<Movie>.Filter;
             var filter = filterBuilder.Eq(m => m.Id, movieId);
