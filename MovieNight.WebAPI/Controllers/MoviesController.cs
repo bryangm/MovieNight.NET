@@ -6,9 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using MongoDB.Bson;
 using MovieNight.Domain.Entities;
-using MongoDB.Driver;
 
 namespace MovieNight.WebAPI.Controllers
 {

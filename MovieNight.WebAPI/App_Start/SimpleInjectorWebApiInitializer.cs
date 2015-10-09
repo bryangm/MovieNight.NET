@@ -8,7 +8,7 @@ namespace MovieNight.WebAPI
     using SimpleInjector;
     using SimpleInjector.Integration.WebApi;
     using MovieNight.Domain.Interfaces;
-    using MovieNight.Domain.Repositories.MongoDb;
+    using MovieNight.Domain.Repositories.EntityFramework;
     
     public static class SimpleInjectorWebApiInitializer
     {
@@ -31,7 +31,7 @@ namespace MovieNight.WebAPI
         private static void InitializeContainer(Container container)
         {
             container.Register<IMoviesRepository, MoviesRepository>(Lifestyle.Scoped);
-            container.RegisterSingleton<MongoDbContext>();
+            container.RegisterSingleton<EntityFrameworkDbContext>();
         }
     }
 }
