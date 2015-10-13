@@ -12,11 +12,11 @@ namespace MovieNight.Domain.Interfaces
         Task<Movie> InsertMovie(Movie movie);
         Task<Movie> UpdateMovie(string movieId, Movie movie);
         Task<Movie> DeleteMovie(string movieId);
-        Task<Movie> InsertDirector(string movieId, Person person);
+        Task<Movie> InsertDirector(string movieId, Director director);
         Task<Movie> DeleteDirector(string movieId, string personId);
-        Task<Movie> InsertWriter(string movieId, Person person);
+        Task<Movie> InsertWriter(string movieId, Writer writer);
         Task<Movie> DeleteWriter(string movieId, string personId);
-        Task<Movie> InsertCastMember(string movieId, Person person);
+        Task<Movie> InsertCastMember(string movieId, CastMember castMember);
         Task<Movie> DeleteCastMember(string movieId, string personId);
 
     }

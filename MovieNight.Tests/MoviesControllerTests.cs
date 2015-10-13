@@ -27,9 +27,9 @@ namespace MovieNight.Tests
                 Rating = "R",
                 Length = 120,
                 Genre = new List<string> {"Action", "Adventure"},
-                Cast = new List<Person>(),
-                Writers = new List<Person>(),
-                Directors = new List<Person>()
+                CastMembers = new List<CastMember>(),
+                Writers = new List<Writer>(),
+                Directors = new List<Director>()
             },
             new Movie {
                 Title = "Test Movie 2",
@@ -38,9 +38,9 @@ namespace MovieNight.Tests
                 Rating = "PG",
                 Length = 90,
                 Genre = new List<string> {"Sci-Fi", "Suspense"},
-                Cast = new List<Person>(),
-                Writers = new List<Person>(),
-                Directors = new List<Person>()
+                CastMembers = new List<CastMember>(),
+                Writers = new List<Writer>(),
+                Directors = new List<Director>()
             },
         };
             

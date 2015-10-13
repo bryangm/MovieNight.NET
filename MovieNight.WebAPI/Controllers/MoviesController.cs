@@ -134,13 +134,13 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/directors
         [Route("{movieId}/directors")]
         [HttpPost]
-        public async Task<HttpResponseMessage> PostDirector(string movieId, Person person)
+        public async Task<HttpResponseMessage> PostDirector(string movieId, Director director)
         {
             HttpResponseMessage response;
 
             try
             {
-                var results = await _repository.InsertDirector(movieId, person);
+                var results = await _repository.InsertDirector(movieId, director);
 
                 response = results == null
                     ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie not found")
@@ -182,13 +182,13 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/writers
         [Route("{movieId}/writers")]
         [HttpPost]
-        public async Task<HttpResponseMessage> PostWriter(string movieId, Person person)
+        public async Task<HttpResponseMessage> PostWriter(string movieId, Writer writer)
         {
             HttpResponseMessage response;
 
             try
             {
-                var results = await _repository.InsertWriter(movieId, person);
+                var results = await _repository.InsertWriter(movieId, writer);
 
                 response = results == null
                     ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie not found")
@@ -230,13 +230,13 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/cast
         [Route("{movieId}/cast")]
         [HttpPost]
-        public async Task<HttpResponseMessage> PostCastMember(string movieId, Person person)
+        public async Task<HttpResponseMessage> PostCastMember(string movieId, CastMember castMember)
         {
             HttpResponseMessage response;
 
             try
             {
-                var results = await _repository.InsertCastMember(movieId, person);
+                var results = await _repository.InsertCastMember(movieId, castMember);
 
                 response = results == null
                     ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie not found")

@@ -10,24 +10,11 @@ namespace MovieNight.Domain.Repositories.EntityFramework
 {
     public class MoviesRepository : IMoviesRepository
     {
-        public Task<Movie> DeleteCastMember(string movieId, string personId)
-        {
-            throw new NotImplementedException();
-        }
+        private readonly EntityFrameworkDbContext _context;
 
-        public Task<Movie> DeleteDirector(string movieId, string personId)
+        public MoviesRepository(EntityFrameworkDbContext context)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<Movie> DeleteMovie(string movieId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Movie> DeleteWriter(string movieId, string personId)
-        {
-            throw new NotImplementedException();
+            _context = context;
         }
 
         public Task<List<Movie>> FindAllMovies()
@@ -40,27 +27,46 @@ namespace MovieNight.Domain.Repositories.EntityFramework
             throw new NotImplementedException();
         }
 
-        public Task<Movie> InsertCastMember(string movieId, Person person)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Movie> InsertDirector(string movieId, Person person)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<Movie> InsertMovie(Movie movie)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Movie> InsertWriter(string movieId, Person person)
+        public Task<Movie> UpdateMovie(string movieId, Movie movie)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Movie> UpdateMovie(string movieId, Movie movie)
+        public Task<Movie> DeleteMovie(string movieId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Movie> InsertDirector(string movieId, Director director)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Movie> DeleteDirector(string movieId, string personId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Movie> InsertWriter(string movieId, Writer writer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Movie> DeleteWriter(string movieId, string personId)
+        {
+            throw new NotImplementedException();
+        }
+        public Task<Movie> InsertCastMember(string movieId, CastMember castMember)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Movie> DeleteCastMember(string movieId, string personId)
         {
             throw new NotImplementedException();
         }

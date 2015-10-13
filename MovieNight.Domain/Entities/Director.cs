@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using MovieNight.Domain.Enums;
 
 namespace MovieNight.Domain.Entities
 {
-    public class Submission
+    public class Director
     {
         [Key]
-        public int SubmissionId { get; set; }
-        public int NightId { get; set; }
+        public int PersonId { get; set; }
         public int MovieId { get; set; }
-        public int Votes { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
-        public virtual Night Night { get; set; }
         public virtual Movie Movie { get; set; }
     }
 }

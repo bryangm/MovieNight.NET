@@ -12,7 +12,10 @@ namespace MovieNight.Domain.Repositories.EntityFramework
     {
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Night> Nights { get; set; }
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<Director> Directors { get; set; }
+        public DbSet<Writer> Writers { get; set; }
+        public DbSet<CastMember> CastMembers { get; set; }
         public DbSet<Submission> Submissions { get; set; }
+        public DbSet<Genre> Genres { get; set; } 
     }
 }
