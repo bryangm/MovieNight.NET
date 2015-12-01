@@ -62,6 +62,10 @@
     <Compile Include="Migrations\201510130427284_Initial_Database_Migration.Designer.cs">
       <DependentUpon>201510130427284_Initial_Database_Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510240330151_Renamed PersonId for CastMembers, Directors, and Writers.cs" />
+    <Compile Include="Migrations\201510240330151_Renamed PersonId for CastMembers, Directors, and Writers.Designer.cs">
+      <DependentUpon>201510240330151_Renamed PersonId for CastMembers, Directors, and Writers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\Director.cs" />
     <Compile Include="Entities\Writer.cs" />
@@ -77,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510130427284_Initial_Database_Migration.resx">
       <DependentUpon>201510130427284_Initial_Database_Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510240330151_Renamed PersonId for CastMembers, Directors, and Writers.resx">
+      <DependentUpon>201510240330151_Renamed PersonId for CastMembers, Directors, and Writers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

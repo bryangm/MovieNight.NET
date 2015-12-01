@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieNight.Domain.Enums
 {
-    public enum GenreType
+    public enum GenreCategory
     {
         Action,
         Adventure,
@@ -21,6 +21,7 @@ namespace MovieNight.Domain.Enums
         Mystery,
         Romance,
         SciFi,
+        Suspense,
         Thriller
     }
 }

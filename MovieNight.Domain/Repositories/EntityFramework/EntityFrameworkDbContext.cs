@@ -16,6 +16,11 @@ namespace MovieNight.Domain.Repositories.EntityFramework
         public DbSet<Writer> Writers { get; set; }
         public DbSet<CastMember> CastMembers { get; set; }
         public DbSet<Submission> Submissions { get; set; }
-        public DbSet<Genre> Genres { get; set; } 
+        public DbSet<Genre> Genres { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("dbo");
+        }
     }
 }

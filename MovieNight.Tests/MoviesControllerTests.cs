@@ -12,6 +12,7 @@ using MovieNight.WebAPI.Controllers;
 using System.Web.Http;
 using MongoDB.Driver;
 using MovieNight.Domain.Entities;
+using MovieNight.Domain.Enums;
 
 namespace MovieNight.Tests
 {
@@ -26,7 +27,17 @@ namespace MovieNight.Tests
                 ReleaseDate = DateTime.Now,
                 Rating = "R",
                 Length = 120,
-                Genre = new List<string> {"Action", "Adventure"},
+                Genres = new List<Genre>()
+                    {
+                        new Genre()
+                        {
+                            Category = GenreCategory.Action
+                        },
+                        new Genre()
+                        {
+                            Category = GenreCategory.Adventure
+                        }
+                    },
                 CastMembers = new List<CastMember>(),
                 Writers = new List<Writer>(),
                 Directors = new List<Director>()
@@ -37,7 +48,17 @@ namespace MovieNight.Tests
                 ReleaseDate = DateTime.Now,
                 Rating = "PG",
                 Length = 90,
-                Genre = new List<string> {"Sci-Fi", "Suspense"},
+                Genres = new List<Genre>()
+                    {
+                        new Genre()
+                        {
+                            Category = GenreCategory.SciFi
+                        },
+                        new Genre()
+                        {
+                            Category = GenreCategory.Suspense
+                        }
+                    },
                 CastMembers = new List<CastMember>(),
                 Writers = new List<Writer>(),
                 Directors = new List<Director>()

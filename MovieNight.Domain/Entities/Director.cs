@@ -7,7 +7,7 @@ namespace MovieNight.Domain.Entities
     public class Director
     {
         [Key]
-        public int PersonId { get; set; }
+        public int DirectorId { get; set; }
         public int MovieId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

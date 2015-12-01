@@ -26,10 +26,11 @@ namespace MovieNight.WebAPI.Controllers
         public async Task<HttpResponseMessage> GetMovies()
         {
             HttpResponseMessage response;
-            var results = await _repository.FindAllMovies();
 
             try
             {
+                var results = await _repository.FindAllMovies();
+
                 response = (results == null || results.Count == 0) 
                     ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "No movies found") 
                     : Request.CreateResponse(HttpStatusCode.OK, results);
@@ -66,7 +67,7 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}
         [Route("{movieId}")]
         [HttpGet]
-        public async Task<HttpResponseMessage> GetMovie(string movieId)
+        public async Task<HttpResponseMessage> GetMovie(int movieId)
         {
             HttpResponseMessage response;
 
@@ -88,7 +89,7 @@ namespace MovieNight.WebAPI.Controllers
 
         [Route("{movieId}")]
         [HttpPatch]
-        public async Task<HttpResponseMessage> PatchMovie(string movieId, Movie movie)
+        public async Task<HttpResponseMessage> PatchMovie(int movieId, Movie movie)
         {
             HttpResponseMessage response;
 
@@ -110,7 +111,7 @@ namespace MovieNight.WebAPI.Controllers
 
         [Route("{movieId}")]
         [HttpDelete]
-        public async Task<HttpResponseMessage> DeleteMovie(string movieId)
+        public async Task<HttpResponseMessage> DeleteMovie(int movieId)
         {
             HttpResponseMessage response;
 
@@ -134,7 +135,7 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/directors
         [Route("{movieId}/directors")]
         [HttpPost]
-        public async Task<HttpResponseMessage> PostDirector(string movieId, Director director)
+        public async Task<HttpResponseMessage> PostDirector(int movieId, Director director)
         {
             HttpResponseMessage response;
 
@@ -155,20 +156,20 @@ namespace MovieNight.WebAPI.Controllers
         }
         #endregion
 
-        #region Routes: movies/{movieId}/directors/{personId}
-        [Route("{movieId}/directors/{personId}")]
+        #region Routes: movies/{movieId}/directors/{directorId}
+        [Route("{movieId}/directors/{directorId}")]
         [HttpDelete]
-        public async Task<HttpResponseMessage> DeleteDirector(string movieId, string personId)
+        public async Task<HttpResponseMessage> DeleteDirector(int movieId, int directorId)
         {
             HttpResponseMessage response;
 
             try
             {
-                var results = await _repository.DeleteDirector(movieId, personId);
+                var results = await _repository.DeleteDirector(movieId, directorId);
 
                 response = results == null
-                    ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie not found")
-                    : Request.CreateResponse(HttpStatusCode.OK, results);
+                    ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie or director not found")
+                    : Request.CreateResponse(HttpStatusCode.NoContent);
             }
             catch (Exception ex)
             {
@@ -182,7 +183,7 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/writers
         [Route("{movieId}/writers")]
         [HttpPost]
-        public async Task<HttpResponseMessage> PostWriter(string movieId, Writer writer)
+        public async Task<HttpResponseMessage> PostWriter(int movieId, Writer writer)
         {
             HttpResponseMessage response;
 
@@ -203,20 +204,20 @@ namespace MovieNight.WebAPI.Controllers
         }
         #endregion
 
-        #region Routes: movies/{movieId}/writers/{personId}
-        [Route("{movieId}/writers/{personId}")]
+        #region Routes: movies/{movieId}/writers/{writerId}
+        [Route("{movieId}/writers/{writerId}")]
         [HttpDelete]
-        public async Task<HttpResponseMessage> DeleteWriter(string movieId, string personId)
+        public async Task<HttpResponseMessage> DeleteWriter(int movieId, int writerId)
         {
             HttpResponseMessage response;
 
             try
             {
-                var results = await _repository.DeleteWriter(movieId, personId);
+                var results = await _repository.DeleteWriter(movieId, writerId);
 
                 response = results == null
-                    ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie not found")
-                    : Request.CreateResponse(HttpStatusCode.OK, results);
+                    ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie or writer not found")
+                    : Request.CreateResponse(HttpStatusCode.NoContent);
             }
             catch (Exception ex)
             {
@@ -230,7 +231,7 @@ namespace MovieNight.WebAPI.Controllers
         #region Routes: movies/{movieId}/cast
         [Route("{movieId}/cast")]
         [HttpPost]
-        public async Task<HttpResponseMessage> PostCastMember(string movieId, CastMember castMember)
+        public async Task<HttpResponseMessage> PostCastMember(int movieId, CastMember castMember)
         {
             HttpResponseMessage response;
 
@@ -251,20 +252,20 @@ namespace MovieNight.WebAPI.Controllers
         }
         #endregion
 
-        #region Routes: movies/{movieId}/cast/{personId}
-        [Route("{movieId}/cast/{personId}")]
+        #region Routes: movies/{movieId}/cast/{castMemberId}
+        [Route("{movieId}/cast/{castMemberId}")]
         [HttpDelete]
-        public async Task<HttpResponseMessage> DeleteCastMember(string movieId, string personId)
+        public async Task<HttpResponseMessage> DeleteCastMember(int movieId, int castMemberId)
         {
             HttpResponseMessage response;
 
             try
             {
-                var results = await _repository.DeleteCastMember(movieId, personId);
+                var results = await _repository.DeleteCastMember(movieId, castMemberId);
 
                 response = results == null
-                    ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie not found")
-                    : Request.CreateResponse(HttpStatusCode.OK, results);
+                    ? Request.CreateErrorResponse(HttpStatusCode.NotFound, "Movie or cast member not found")
+                    : Request.CreateResponse(HttpStatusCode.NoContent);
             }
             catch (Exception ex)
             {

@@ -7,7 +7,7 @@ namespace MovieNight.Domain.Entities
     public class Writer
     {
         [Key]
-        public int PersonId { get; set; }
+        public int WriterId { get; set; }
         public int MovieId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

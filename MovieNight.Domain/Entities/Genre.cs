@@ -14,7 +14,7 @@ namespace MovieNight.Domain.Entities
         [Key]
         public int GenreId { get; set; }
         public int MovieId { get; set; }
-        public GenreType Type { get; set; }
+        public GenreCategory Category { get; set; }
 
         public virtual Movie Movie { get; set; }
     }

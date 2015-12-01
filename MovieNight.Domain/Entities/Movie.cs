@@ -15,7 +15,7 @@ namespace MovieNight.Domain.Entities
         public int Length { get; set; }
         public DateTime ReleaseDate { get; set; }
 
-        public virtual List<string> Genre { get; set; }
+        public virtual List<Genre> Genres { get; set; }
         public virtual List<Director> Directors { get; set; }
         public virtual List<Writer> Writers { get; set; }
         public virtual List<CastMember> CastMembers { get; set; } 
